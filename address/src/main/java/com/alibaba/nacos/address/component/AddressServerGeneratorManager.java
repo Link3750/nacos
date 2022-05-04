@@ -84,7 +84,13 @@ public class AddressServerGeneratorManager {
         
         return instanceList;
     }
-    
+
+    /**
+     * if port is null, the method will return [ip, "8848"], otherwise it will return [ip, port]
+     *
+     * @param ip the input ip
+     * @return the separated ip array.
+     */
     private String[] generateIpAndPort(String ip) {
         String[] result = InternetAddressUtil.splitIPPortStr(ip);
         if (result.length != InternetAddressUtil.SPLIT_IP_PORT_RESULT_LENGTH) {
